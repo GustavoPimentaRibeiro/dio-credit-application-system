@@ -10,7 +10,7 @@ data class CustomerDto (
     val cpf: String,
     val income: BigDecimal,
     val email: String,
-    val password: String
+    val password: String,
     val zipCode: String,
     val street: String
 ) {
