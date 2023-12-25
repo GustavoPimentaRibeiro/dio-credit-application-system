@@ -21,7 +21,7 @@ class CreditService(
         return this.creditRepository.save(credit)
     }
 
-    override fun findAllByCostumer(custumerId: Long): List<Credit> = this.creditRepository.findAllByCustomerId(custumerId)
+    override fun findAllByCostumerId(custumerId: Long): List<Credit> = this.creditRepository.findAllByCustomerId(custumerId)
 
     override fun findByCreditCode(customerId: Long, creditCode: UUID): Credit {
         val credit: Credit = (this.creditRepository.findByCreditCode(creditCode)) ?: throw BusinessException("Creditcode $creditCode not found")
