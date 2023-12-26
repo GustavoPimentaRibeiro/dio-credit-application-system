@@ -33,7 +33,7 @@ class CreditResource(
 
     @GetMapping
     fun findAllByCustomerId(@RequestParam(value = "customerId") customerId: Long): ResponseEntity<List<CreditViewList>> {
-        val creditViewList: List<CreditViewList> = this.creditService.findAllByCostumer(customerId)
+        val creditViewList: List<CreditViewList> = this.creditService.findAllByCostumerId(customerId)
             .stream()
             .map { credit: Credit -> CreditViewList(credit) }
             .collect(Collectors.toList())

@@ -6,7 +6,6 @@ import me.dio.credit.application.system.repository.CreditRepository
 import me.dio.credit.application.system.service.ICreditService
 import org.springframework.stereotype.Service
 import java.lang.IllegalArgumentException
-import java.lang.RuntimeException
 import java.util.*
 
 @Service
@@ -21,7 +20,7 @@ class CreditService(
         return this.creditRepository.save(credit)
     }
 
-    override fun findAllByCostumer(custumerId: Long): List<Credit> = this.creditRepository.findAllByCustomerId(custumerId)
+    override fun findAllByCostumerId(custumerId: Long): List<Credit> = this.creditRepository.findAllByCustomerId(custumerId)
 
     override fun findByCreditCode(customerId: Long, creditCode: UUID): Credit {
         val credit: Credit = (this.creditRepository.findByCreditCode(creditCode)) ?: throw BusinessException("Creditcode $creditCode not found")
